@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Nancha ra Monster</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <div class="wrapper">
+    <!-- タイトル -->
+    <div id="title_scene">
+      <h1>Nancha <span>ra</span> Monster</h1>
+      <div id="title_scene1" class="title_scenes">
+        <ul>
+          <li id="new_game">はじめから</li>
+          <li id="load_game">つづきから</li>
+        </ul>
+      </div>
+      <div id="title_scene2" class="title_scenes">
+        <ul>
+          <li>
+            <label for="username_new">あなたの名前</label>
+            <input type="text" id="username_new">
+          </li>
+          <li>
+            <label for="password_new">パスワード　</label>
+            <input type="text" id="password_new">
+          </li>
+          <li><button id="start_btn">はじめる</button></li>
+          <li><button class="title_return">もどる</button></li>
+        </ul>
+      </div>
+      <div id="title_scene3" class="title_scenes">
+        <ul>
+          <li>
+            <label for="username_load">あなたの名前</label>
+            <input type="text" id="username_load">
+          </li>
+          <li>
+            <label for="password_load">パスワード　</label>
+            <input type="text" id="password_load">
+          </li>
+          <li><button id="login_btn">ログイン</button></li>
+          <li><button class="title_return">もどる</button></li>
+        </ul>
+      </div>
+    </div>
+
+    <div id="loading_scene">Now loading...</div>
+
+    <!-- こっから本番 -->
+    <div id="main_scene">
+      <!-- 左に表示されるコマンド類 -->
+      <div id="command_box">
+        <div id="gold_box"></div>
+        <div id="main_commandbox" class="command_boxes">
+          <div id="user_command" class="commands">ユーザー</div>
+          <div id="shop_command" class="commands">ショップ</div>
+          <div id="monster_command" class="commands">モンスター</div>
+          <div id="battle_command" class="commands">バトル</div>
+          <div id="friend_command" class="commands">フレンド</div>
+          <div id="title_command" class="commands">タイトル</div>
+        </div>
+        <div id="user_commandbox" class="command_boxes">
+          <div id="user_commands0" class="commands">プロフィール</div>
+          <div id="user_commands1" class="commands">はいけい</div>
+          <!-- 図鑑作る時間はなさそうだ・・・。 -->
+          <!-- <div id="user_commands2" class="commands">ずかん</div> -->
+          <div id="user_commands3" class="commands">モンスター冬眠</div>
+          <div class="commands return">もどる</div>
+        </div>
+        <div id="userm_commandbox" class="command_boxes">
+          <div id="userm_commands0" class="commands"></div>
+          <div id="userm_commands1" class="commands"></div>
+          <div id="userm_commands2" class="commands"></div>
+          <div id="userm_commands3" class="commands">冬眠させる</div>
+          <div class="commands return">もどる</div>
+        </div>
+        <div id="shop_commandbox" class="command_boxes">
+          <div id="shop_commands0" class="commands">モンスター</div>
+          <div id="shop_commands1" class="commands">たべもの</div>
+          <div class="commands return">もどる</div>
+        </div>
+        <div id="shopm_commandbox" class="command_boxes">
+          <div id="shopm_commands0" class="commands">いぬ</div>
+          <div id="shopm_commands1" class="commands">とり</div>
+          <div id="shopm_commands2" class="commands">ふぐ</div>
+          <div class="commands return">もどる</div>
+        </div>
+        <div id="shopf_commandbox" class="command_boxes">
+          <div id="shopf_commands0" class="commands">にく</div>
+          <div id="shopf_commands1" class="commands">さかな</div>
+          <div id="shopf_commands2" class="commands">やさい</div>
+          <div id="shopf_commands3" class="commands">ビタミン剤</div>
+          <div id="shopf_commands4" class="commands">ケーキ</div>
+          <div class="commands return">もどる</div>
+        </div>
+        <div id="background_commandbox" class="command_boxes">
+          <div id="background_commands0" class="commands">街</div>
+          <div id="background_commands1" class="commands">森</div>
+          <div id="background_commands2" class="commands">海</div>
+          <div id="background_commands3" class="commands">山</div>
+          <div id="background_commands4" class="commands">草原</div>
+          <div id="background_commands5" class="commands">雪山</div>
+          <div id="background_commands6" class="commands">澤部</div>
+          <div class="commands return">もどる</div>
+        </div>
+        <div id="monster_commandbox" class="command_boxes">
+          <div id="monster_commands0" class="commands">ステータス</div>
+          <div id="monster_commands1" class="commands">トレーニング</div>
+          <div id="monster_commands2" class="commands">しょくじ</div>
+          <div id="monster_commands3" class="commands">トイレ</div>
+          <div id="monster_commands4" class="commands">すいみん</div>
+          <div class="commands return">もどる</div>
+        </div>
+        <div id="training_commandbox" class="command_boxes">
+          <div id="training_commands0" class="commands">こうげき</div>
+          <div id="training_commands1" class="commands">まほう</div>
+          <div id="training_commands2" class="commands">バリア</div>
+          <div class="commands return">もどる</div>
+        </div>
+        <div id="meal_commandbox" class="command_boxes">
+          <div id="meal_commands0" class="commands">にく</div>
+          <div id="meal_commands1" class="commands">さかな</div>
+          <div id="meal_commands2" class="commands">やさい</div>
+          <div id="meal_commands3" class="commands">ビタミン剤</div>
+          <div id="meal_commands4" class="commands">ケーキ</div>
+          <div class="commands return">もどる</div>
+        </div>
+        <div id="battle_commandbox" class="command_boxes">
+          <div class="commands return">もどる</div>
+        </div>
+        <div id="friend_commandbox" class="command_boxes">
+          <div id="friend_commands0" class="commands">フレンド一覧</div>
+          <div id="friend_commands1" class="commands">探す</div>
+          <div id="friend_commands2" class="commands">フレンド承認</div>
+          <div id="friend_commands3" class="commands">応援受取</div>
+          <div class="commands return">もどる</div>
+        </div>
+        <div id="return_commandbox" class="command_boxes">
+          <div class="commands return">もどる</div>
+        </div>
+      </div>
+
+      <!-- 右側のメイン画面 -->
+      <div id="scene_box">
+        <!-- 一番使うメインのホーム -->
+        <div id="home_scene" class="scenes">
+          <div id="pm_box">
+            <div id="icon_box">
+              <div id="meal_icon" class="icons">食欲</div>
+              <div id="toilet_icon" class="icons">便意</div>
+              <div id="sleep_icon" class="icons">眠気</div>
+            </div>
+            <div id="pmimg_box"></div>
+          </div>
+          <div id="text_box">
+            <div id="text_text"></div>
+            <div id="text_commandbox">
+              <div id="shop_yn" class="tc_boxes">
+                <div id="shop_yes" class="text_commands">はい</div>
+                <div class="no text_commands">いいえ</div>
+              </div>
+              <div id="training_yn" class="tc_boxes">
+                <div id="training_yes" class="text_commands">はい</div>
+                <div class="no text_commands">いいえ</div>
+              </div>
+              <div id="meal_yn" class="tc_boxes">
+                <div id="meal_yes" class="text_commands">はい</div>
+                <div class="no text_commands">いいえ</div>
+              </div>
+              <div id="toilet_yn" class="tc_boxes">
+                <div id="toilet_yes" class="text_commands">はい</div>
+                <div class="no text_commands">いいえ</div>
+              </div>
+              <div id="sleep_yn" class="tc_boxes">
+                <div id="sleep_yes" class="text_commands">はい</div>
+                <div class="no text_commands">いいえ</div>
+              </div>
+              <div id="totitle_yn1" class="tc_boxes">
+                <div id="totitle_yes1" class="text_commands">はい</div>
+                <div class="no text_commands">いいえ</div>
+              </div>
+              <div id="close_box" class="tc_boxes">
+                <div id="close" class="text_commands closes">とじる</div>
+              </div>
+              <div id="sleep_closebox" class="tc_boxes">
+                <div id="sleep_close" class="text_commands">とじる</div>
+              </div>
+              <div id="totitle_closebox" class="tc_boxes">
+                <div id="totitle_close" class="text_commands">とじる</div>
+              </div>
+              <div id="life_nextbox" class="tc_boxes">
+                <div id="life_next" class="text_commands">とじる</div>
+              </div>
+              <div id="life_closebox" class="tc_boxes">
+                <div id="life_close" class="text_commands">とじる</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- プロフィールUI -->
+        <div id="profile_scene" class="scenes">
+          <div id="status_left" class="columns">
+            <div id="profile_name"></div>
+            <div id="profile_id"></div>
+            <div id="profile_gold"></div>
+            <div id="profile_playtimefull"></div>
+          </div>
+          <div id="status_right" class="columns">
+            <div id="profile_foodstock0"></div>
+            <div id="profile_foodstock1"></div>
+            <div id="profile_foodstock2"></div>
+            <div id="profile_foodstock3"></div>
+            <div id="profile_foodstock4"></div>
+          </div>
+        </div>
+
+        <div id="status_scene" class="scenes">
+          <div id="status_left" class="columns">
+            <div id="status_imgbox">
+              <div id="status_img"></div>
+            </div>
+            <div id="status_name"></div>
+          </div>
+          <div id="status_right" class="columns">
+            <div id="status_attack"></div>
+            <div id="status_magic"></div>
+            <div id="status_barrier"></div>
+          </div>
+        </div>
+
+        <!-- モンスター冬眠UI -->
+        <div id="sleeping_scene" class="scenes">
+          <div id="sleeping_left" class="columns">
+            <div id="sleeping_imgbox">
+              <div id="sleeping_img"></div>
+            </div>
+            <div id="sleeping_name"></div>
+          </div>
+          <div id="sleeping_right" class="columns">
+            <div id="sleeping_attack"></div>
+            <div id="sleeping_magic"></div>
+            <div id="sleeping_barrier"></div>
+          </div>
+          <div id="text2_box">
+            <div id="text2_text"></div>
+            <div id="text2_commandbox">
+              <div id="userm_yn1" class="tc_boxes">
+                <div id="userm_yes1" class="text_commands">はい</div>
+                <div class="no text_commands">いいえ</div>
+              </div>
+              <div id="userm_yn2" class="tc_boxes">
+                <div id="userm_yes2" class="text_commands">はい</div>
+                <div class="no text_commands">いいえ</div>
+              </div>
+              <div id="close2_box" class="tc_boxes">
+                <div id="close2" class="text_commands closes">とじる</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- フレンドシーンUI -->
+        <div id="friend_box" class="scenes">
+          <div id="friend0">
+            <div id="friend0_name" class="friend_names"></div>
+            <div id="cheer0" class="commands friend_buttons">応援する</div>
+            <div id="delete0" class="commands friend_buttons">フレンド解除</div>
+          </div>
+          <div id="friend1">
+            <div id="friend1_name" class="friend_names"></div>
+            <div id="cheer1" class="commands friend_buttons">応援する</div>
+            <div id="delete1" class="commands friend_buttons">フレンド解除</div>
+          </div>
+          <div id="friend2">
+            <div id="friend2_name" class="friend_names"></div>
+            <div id="cheer2" class="commands friend_buttons">応援する</div>
+            <div id="delete2" class="commands friend_buttons">フレンド解除</div>
+          </div>
+        </div>
+
+        <div id="friend_search" class="scenes">
+          <div id="fsearch_text"></div>
+          <div>
+            <input type="text" name="search" id="input_search">
+            <div id="friend_future"></div>
+          </div>
+          <div>
+            <div id="search_btn" class="commands">検索する</div>
+            <div id="shinsei_btn" class="commands">申請する</div>
+          </div>
+        </div>
+
+        <div id="become_friend" class="scenes">
+          <div id="fbecome_text"></div>
+          <div id="user_indicate"></div>
+          <div>
+            <div id="shonin_btn" class="commands">承認する</div>
+            <div id="block_btn" class="commands">拒否する</div>
+          </div>
+        </div>
+
+        <div id="cheered_scene" class="scenes">
+          <div id="fcheered_text"></div>
+          <div id="user_indicate2"></div>
+          <div>
+            <div id="cheer_accept" class="commands">受け取る</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- 以下にfirebaseのコードを貼り付けよう -->
+    <!-- firebaseapp-jsだったのをfirebase.jsに記述変更すること。 -->
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+
+    <script src="https://www.gstatic.com/firebasejs/7.14.5/firebase.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+       https://firebase.google.com/docs/web/setup#available-libraries -->
+
+    <script>
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: "AIzaSyAUdlzzLsRkBh5EeaaZQtMthc8v7HYnTEI",
+        authDomain: "quest-of-geek.firebaseapp.com",
+        databaseURL: "https://quest-of-geek.firebaseio.com",
+        projectId: "quest-of-geek",
+        storageBucket: "quest-of-geek.appspot.com",
+        messagingSenderId: "205942099287",
+        appId: "1:205942099287:web:c09d866ab837b1a0758212"
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+
+      let userDB = firebase.firestore().collection("userDB");
+    </script>
+    <script type="text/javascript" src="js/system.js"></script>
+</body>
+
+</html>

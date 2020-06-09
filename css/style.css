@@ -1,0 +1,714 @@
+body {
+    margin:0;
+    padding:0;
+    background-color: #111;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.wrapper {
+    width: 100%;
+    height: 100vh;
+}
+
+#title_scene {
+    width: 100%;
+    height: 100vh;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h1{
+    height: 80px;
+    font-size: 80px;
+    color: #eee;
+}
+
+h1 > span {
+    color: red;
+}
+
+.title_scenes {
+    width: 100%;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+ul {
+    width: 400px;
+    height: 300px;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+li {
+    width: 100%;
+    height: 50px;
+    background-color: #eee;
+    font-size: 20px;
+    text-align: center;
+    border-radius: 50px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    cursor: pointer;
+}
+
+input {
+    height: 30px;
+}
+
+#start_btn, #login_btn, .title_return {
+    background-color: transparent;
+    font-size: 20px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    outline: none;
+    padding: 0;
+    appearance: none;
+    width: 400px;
+    height: 50px;
+    background-color: #eee;
+}
+
+li:hover,#start_btn:hover, #login_btn:hover, .title_return:hover {
+    background: #aaa;
+}
+
+#loading_scene {
+    width: 100%;
+    height: 100vh;
+    display: none;
+    color: #fff;
+    font-size: 40px;
+}
+
+/************
+  mainのお話 
+************/
+#main_scene {
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+}
+
+#command_box {
+    width: 15%;
+    height: 100%;
+    position: relative;
+}
+
+#gold_box {
+    width: 100%;
+    height: 10%;
+    position: absolute;
+    top: 0;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: #aaa;
+    border: solid #777 2px;
+    border-radius: 5px;
+    border-collapse: collapse;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0.9;
+}
+
+.command_boxes {
+    width: 100%;
+    position: absolute;
+    top: 10%;
+    border: solid #777 2px;
+    border-radius: 5px;
+    box-sizing: border-box;
+    display: none;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    opacity: 0.9;
+}
+
+#main_commandbox {
+    height: 60%;
+}
+
+#user_commandbox {
+    height: 40%;
+}
+
+#background_commandbox {
+    height: 80%;
+}
+
+#userm_commandbox {
+    height: 50%;
+}
+
+#shop_commandbox {
+    height: 30%;
+}
+
+#shopm_commandbox {
+    height: 40%;
+}
+
+#shopf_commandbox {
+    height: 60%;
+}
+
+#monster_commandbox {
+    height: 60%;
+}
+
+#training_commandbox {
+    height: 40%;
+}
+
+#meal_commandbox {
+    height: 60%;
+}
+
+#battle_commandbox {
+    height: 10%;
+}
+
+#friend_commandbox {
+    height: 50%;
+}
+
+#return_commandbox {
+    height: 10%;
+}
+
+.commands {
+    width: 100%;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: #aaa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+#main_commandbox > .commands {
+    height: calc(100%/6);
+}
+
+#user_commandbox > .commands {
+    height: calc(100%/4);
+}
+
+#background_commandbox > .commands {
+    height: calc(100%/8);
+}
+
+#userm_commandbox > .commands {
+    height: calc(100%/5);
+}
+
+#shop_commandbox > .commands {
+    height: calc(100%/3);
+}
+
+#shopm_commandbox > .commands {
+    height: calc(100%/4);
+}
+
+#shopf_commandbox > .commands {
+    height: calc(100%/6);
+}
+
+#monster_commandbox > .commands {
+    height: calc(100%/6);
+}
+
+#training_commandbox > .commands {
+    height: calc(100%/4);
+}
+
+#meal_commandbox > .commands {
+    height: calc(100%/6);
+}
+
+#battle_commandbox > .commands {
+    height: calc(100%/1);
+}
+
+#friend_commandbox > .commands {
+    height: calc(100%/5);
+}
+
+#return_commandbox > .commands {
+    height: calc(100%/1);
+}
+
+.commands:hover {
+    background-color: #77f;
+    color: #eee;
+}
+
+/* シーン全般 */
+#scene_box {
+    width: 85%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.scenes {
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+
+/* 最も使うホームのシーン */
+#home_scene {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+#pm_box {
+    width: 180px;
+    height: 220px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    overflow: hidden;
+}
+
+#icon_box {
+    width: 100%;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.icons {
+    width: 60px;
+    height: 100%;
+    border-radius: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+#meal_icon {
+    position: absolute;
+    left: 0;
+    background-color: #faa;
+}
+
+#toilet_icon {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #ffa;
+}
+
+#sleep_icon {
+    position: absolute;
+    right: 0;
+    background-color: #aaf;
+}
+
+#pmimg_box {
+    width: 180px;
+    height: 180px;
+}
+
+#text_box, #text2_box {
+    width: 70%;
+    height: 20%;
+    background-color: #fff;
+    border: solid #111 2px;
+    border-radius: 20px;
+    box-sizing: border-box;
+    display: none;
+    justify-content: space-around;
+    align-items: center;
+    position: absolute;
+    bottom: 10%;
+    opacity: 0.9;
+}
+
+#text_text, #text2_text {
+    width: 60%;
+    height: 80%;
+    font-size: 20px;
+}
+
+#text_commandbox, #text2_commandbox {
+    width: 30%;
+    height: 80%;
+}
+
+.tc_boxes {
+    width: 100%;
+    height: 100%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.text_commands {
+    width: 50%;
+    height: 100%;
+    font-size: 18px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.text_commands:hover {
+    background-color: #777;
+}
+
+/* モンスターステータスUI */
+#status_scene {
+    width: 80%;
+    height: 80%;
+    border: solid #777 2px;
+    border-radius: 5px;
+    box-sizing: border-box;
+    justify-content: start;
+    align-items: center;
+    background-color: #aaa;
+    font-size: 30px;
+    font-weight: bold;
+    opacity: 0.9
+}
+
+.columns {
+    width: 50%;
+}
+
+#status_left {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#status_left > div {
+    height: calc(100%/2);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#status_imgbox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#status_img {
+    width: 180px;
+    height: 180px;
+}
+
+#status_right {
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#status_right > div {
+    height: calc(100%/3);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* プロフィールUI */
+#profile_scene {
+    width: 80%;
+    height:80%;
+    border: solid #777 2px;
+    border-radius: 5px;
+    box-sizing: border-box;
+    display: none;
+    justify-content: start;
+    align-items: center;
+    background-color: #aaa;
+    font-size: 30px;
+    font-weight: bold;
+    opacity: 0.9;
+}
+
+#profile_left {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#profile_left > div {
+    height: calc(100%/4);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#profile_right {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#profile_right > div {
+    height: calc(100%/5);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 冬眠UI */
+#sleeping_scene {
+    height: 100%;
+    justify-content: center;
+    align-items: start;
+    font-size: 30px;
+    font-weight: bold;
+    position: relative;
+}
+
+#sleeping_left {
+    width: 40%;
+    height: 60%;
+    border: solid #777 2px;
+    border-radius: 5px;
+    border-right: none;
+    box-sizing: border-box;
+    background-color: #aaa;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0.9;
+}
+
+#sleeping_left > div {
+    height: calc(100%/2);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#sleeping_imgbox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#sleeping_img {
+    width: 180px;
+    height: 180px;
+}
+
+#sleeping_right {
+    width: 40%;
+    height: 60%;
+    border: solid #777 2px;
+    border-radius: 5px;
+    border-left: none;
+    box-sizing: border-box;
+    background-color: #aaa;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0.9;
+}
+
+#sleeping_right > div {
+    height: calc(100%/3);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* フレンド系シーンのUI */
+#friend_box {
+    width: 60%;
+    height: 60%;
+    background-color: #aaa;
+    border: solid #777 2px;
+    border-radius: 5px;
+    box-sizing: border-box;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    opacity: 0.9;
+}
+
+#friend_box > div {
+    width: 100%;
+    height: calc(100%/3);
+    display: none;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.friend_names {
+    width: 50%;
+    font-size: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.friend_buttons {
+    width: 20%;
+    height: 60%;
+    font-size: 16px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#friend_search {
+    width: 50%;
+    height: 30%;
+    background-color: #aaa;
+    border: solid #777 2px;
+    border-radius: 5px;
+    box-sizing: border-box;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    opacity: 0.9;
+}
+
+#friend_search > div {
+    width: 100%;
+    height: calc(100%/3);
+    font-size: 18px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#input_search {
+    width: 300px;
+    height: 50%;
+}
+
+#search_btn, #shinsei_btn {
+    width: 200px;
+    height: 80%;
+    display: none;
+}
+
+#become_friend {
+    width: 50%;
+    height: 30%;
+    background-color: #aaa;
+    border: solid #777 2px;
+    border-radius: 5px;
+    box-sizing: border-box;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    opacity: 0.9;
+}
+
+#become_friend > div {
+    width: 100%;
+    height: calc(100%/3);
+    font-size: 18px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#shonin_btn, #block_btn {
+    width: 200px;
+    height: 80%;
+    display: none;
+}
+
+#cheered_scene {
+    width: 50%;
+    height: 30%;
+    background-color: #aaa;
+    border: solid #777 2px;
+    border-radius: 5px;
+    box-sizing: border-box;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    opacity: 0.9;
+}
+
+#cheered_scene > div {
+    width: 100%;
+    height: calc(100%/3);
+    font-size: 18px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#cheer_accept {
+    width: 200px;
+    height: 80%;
+    display: none;
+}
+
+.untouchable {
+    pointer-events: none;
+    background-color: #444;
+    border: none;
+    cursor: none;
+}
+
+.inform {
+    background-color: #ff7;
+}

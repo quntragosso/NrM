@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Nancha ra Monster</title>
+    <link rel="stylesheet" href="css/battlestyle.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <div id="login_scene" class="scenes">
+            <h1>バトルシステム試作中</h1>
+            <div class="btns">
+                <label for="loadname">あなたの名前</label>
+                <input type="text" id="loadname">
+            </div>
+            <div class="btns">
+                <label for="loadpass">パスワード　</label>
+                <input type="text" id="loadpass"></div>
+            <div id="login" class="btns" name="log">入室</div>
+        </div>
+
+        <div id="match_scene" class="scenes">対戦相手を探しています。</div>
+
+        <div id="battle_scene" class="scenes">
+            <div id="battle_left" class="battle_scenes">
+                <div id="bmHP_left" class="hp items"></div>
+                <div id="bmimg_left" class="img items"></div>
+                <div id="bmname_left" class="name items"></div>
+                <div id="bmhands_left" class="hands">
+                    <div id="bmattack_left" class="lefthand untouchable">こうげき</div>
+                    <div id="bmmagic_left" class="lefthand untouchable">まほう</div>
+                    <div id="bmbarrier_left" class="lefthand untouchable">バリア</div>
+                </div>
+                <div id="bmbrank_left"></div>
+            </div>
+            <div id="battle_right" class="battle_scenes">
+                <div id="bmHP_right" class="hp items"></div>
+                <div id="bmimg_right" class="img items"></div>
+                <div id="bmname_right" class="name items"></div>
+                <div id="bmhands_right" class="hands items">
+                    <div id="bmattack_right" class="righthand untouchable">こうげき</div>
+                    <div id="bmmagic_right" class="righthand untouchable">まほう</div>
+                    <div id="bmbarrier_right" class="righthand untouchable">バリア</div>
+                </div>
+                <div id="bmbrank_right"></div>
+            </div>
+            <div id="battle_under" class="battle_scenes">
+                <div id="battle_text" class="items"></div>
+                <div id="battle_next" class="commands">つぎへ</div>
+                <div id="battle_close" class="commands">とじる</div>
+                <div id="battle_end" class="commands">退出する</div>
+            </div>
+        </div>
+
+
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- 以下にfirebaseのコードを貼り付けよう -->
+    <!-- firebaseapp-jsだったのをfirebase.jsに記述変更すること。 -->
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+
+    <script src="https://www.gstatic.com/firebasejs/7.14.5/firebase.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+               https://firebase.google.com/docs/web/setup#available-libraries -->
+
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyAUdlzzLsRkBh5EeaaZQtMthc8v7HYnTEI",
+            authDomain: "quest-of-geek.firebaseapp.com",
+            databaseURL: "https://quest-of-geek.firebaseio.com",
+            projectId: "quest-of-geek",
+            storageBucket: "quest-of-geek.appspot.com",
+            messagingSenderId: "205942099287",
+            appId: "1:205942099287:web:c09d866ab837b1a0758212"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+
+        let userDB = firebase.firestore().collection("userDB");
+        let battleServer = firebase.firestore().collection("battleServer");
+    </script>
+    <script type="text/javascript" src="js/battlesystem.js"></script>
+</body>
+
+</html>
