@@ -213,7 +213,7 @@ $(async function () {
 
                 };
             } else if (hostDamageStatus != "unset" && guestDamageStatus != "unset") {
-                               $("#battle_text").text(hostStatus.name + "は" + guestDamageStatus.hand + "を選択。" + guestStatus.name + "に" + hostDamageStatus.damage + "のダメージ。" + guestStatus.name + "は" + hostDamageStatus.hand + "を選択。" + hostStatus.name + "に" + guestDamageStatus.damage + "のダメージ。");
+                $("#battle_text").text(hostStatus.name + "は" + guestDamageStatus.hand + "を選択。" + guestStatus.name + "に" + hostDamageStatus.damage + "のダメージ。" + guestStatus.name + "は" + hostDamageStatus.hand + "を選択。" + hostStatus.name + "に" + guestDamageStatus.damage + "のダメージ。");
                 $("#battle_close").css("display", "flex");
                 if (you == "host") {
                     battleServer.doc(serverID).update({
